@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">niqzart's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 8, Total Commits  : 3984, Total PRs: 367, Total PRs Reviewed: 22, Total Issues: 180, Contributed to (last year): 8</desc>
+        <desc id="descId">Total Stars Earned: 8, Total Commits  : 3985, Total PRs: 367, Total PRs Reviewed: 22, Total Issues: 180, Contributed to (last year): 8</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 82.88817390161466;
+        stroke-dashoffset: 82.88633964513761;
       }
     }
   
