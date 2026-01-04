@@ -40,6 +40,17 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
+
           git add assets/*.svg
-          git commit -m "Update README cards" || exit 0
-          git push
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes detected"
+          else
+            last_commit_message=$(git log -1 --pretty=%B)
+            if [[ "$last_commit_message" == "auto: cards update" ]]; then
+              git commit --amend
+            else
+              git commit -m "auto: cards update" || exit 0
+            fi
+            git push --force
+          fi
