@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
@@ -43,14 +45,10 @@ jobs:
 
           git add assets/*.svg
 
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "No changes detected"
+          last_commit_message=$(git log -1 --pretty=%B)
+          if [[ "$last_commit_message" == "auto: cards update" ]]; then
+            git commit -m "auto: cards update" --amend
           else
-            last_commit_message=$(git log -1 --pretty=%B)
-            if [[ "$last_commit_message" == "auto: cards update" ]]; then
-              git commit --amend
-            else
-              git commit -m "auto: cards update" || exit 0
-            fi
-            git push --force
+            git commit -m "auto: cards update"
           fi
+          git push --force
