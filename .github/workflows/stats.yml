@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
 
       - name: Generate stats card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
           options: show_icons=true&theme=dark&count_private=true&include_all_commits=true&show=reviews&rank_icon=percentile
@@ -23,7 +23,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
           options: show_icons=true&theme=dark&count_private=true&layout=compact&langs_count=8
@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Generate pin card
-      #   uses: readme-tools/github-readme-stats-action@v1
+      #   uses: stats-organization/github-readme-stats-action@v2
       #   with:
       #     card: pin
       #     options: repo=github-readme-stats
